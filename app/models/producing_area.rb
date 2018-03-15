@@ -1,0 +1,2 @@
+class ProducingArea < ApplicationRecord
+end

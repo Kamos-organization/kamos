@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alcohol: one
+  user: one
+  evaluation: 1
+  sweetness: 1
+  acidity: 1
+  bitter: 1
+  richness: 1
+  kire: 1
+  fragrance: 1
+  title: MyString
+  content: MyText
+
+two:
+  alcohol: two
+  user: two
+  evaluation: 1
+  sweetness: 1
+  acidity: 1
+  bitter: 1
+  richness: 1
+  kire: 1
+  fragrance: 1
+  title: MyString
+  content: MyText
