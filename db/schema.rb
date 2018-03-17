@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 2018_03_14_152250) do
   create_table "alcohols", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "degree"
-    t.bigint "production_area_id", null: false
+    t.bigint "producing_area_id", null: false
     t.bigint "category_id", null: false
     t.bigint "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_alcohols_on_category_id"
-    t.index ["production_area_id"], name: "index_alcohols_on_production_area_id"
+    t.index ["producing_area_id"], name: "index_alcohols_on_producing_area_id"
     t.index ["recipe_id"], name: "index_alcohols_on_recipe_id"
   end
 
