@@ -5,6 +5,7 @@ class Site::AlcoholController < ApplicationController
   end
 
   def show
+    @alcohol = Alcohol.find(params[:id])
   end
 
   def review

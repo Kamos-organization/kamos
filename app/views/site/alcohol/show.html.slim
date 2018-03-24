@@ -1,2 +1,28 @@
-h1 Site::Alcohol#show
-p Find me in app/views/site/alcohol/show.html.slim
+#alcohol-show
+  h1 酒詳細
+
+  label 名称
+  = @alcohol.name
+  br
+
+  label アルコール度数
+  = @alcohol.degree
+  br
+
+  label 原産国
+  = @alcohol.producing_area.name
+  br
+
+  label 原料
+  - @alcohol.materials.each do |material|
+    = material.name
+  br
+
+  label テイスト
+  - @alcohol.tags.each do |tag|
+      = tag.name
+  br
+
+  label 説明(カラム追加しないとダメ)
+  br
+

@@ -14,7 +14,8 @@ ProducingArea.create!(name: '日本') if Rails.env.development?
 Recipe.create!(name: 'ラガー') if Rails.env.development?
 Recipe.create!(name: 'エール') if Rails.env.development?
 Recipe.create!(name: 'ドライビール') if Rails.env.development?
-Tag.create!(name: 'アサヒビール') if Rails.env.development?
+Tag.create!(name: '辛い') if Rails.env.development?
+Tag.create!(name: '強炭酸') if Rails.env.development?
 Alcohol.create!(name: 'スーパードライ', degree: 5, producing_area_id: 1, category_id: 1, recipe_id: 1) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 1) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 2) if Rails.env.development?
