@@ -14,13 +14,16 @@ ProducingArea.create!(name: '日本') if Rails.env.development?
 Recipe.create!(name: 'ラガー') if Rails.env.development?
 Recipe.create!(name: 'エール') if Rails.env.development?
 Recipe.create!(name: 'ドライビール') if Rails.env.development?
-Tag.create!(name: '辛い') if Rails.env.development?
+Tag.create!(name: 'ピルスナー') if Rails.env.development?
+Tag.create!(name: 'エール') if Rails.env.development?
+Tag.create!(name: 'スタウト') if Rails.env.development?
 Tag.create!(name: '強炭酸') if Rails.env.development?
-Alcohol.create!(name: 'スーパードライ', degree: 5, producing_area_id: 1, category_id: 1, recipe_id: 1) if Rails.env.development?
+Alcohol.create!(name: 'スーパードライ', degree: 5, description: '開発当時に進行していた日本の食生活の変化に対応したビールとして開発された。同時代の日本で販売されていたビールに比べ、苦味を抑え、甘さも少なくしたビールである。', producing_area_id: 1, category_id: 1, recipe_id: 1) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 1) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 2) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 3) if Rails.env.development?
 AlcoholsTag.create!(alcohol_id: 1, tag_id: 1) if Rails.env.development?
+AlcoholsTag.create!(alcohol_id: 1, tag_id: 4) if Rails.env.development?
 User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 Favorite.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?
 History.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?

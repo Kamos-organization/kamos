@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_03_14_152250) do
   create_table "alcohols", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "degree"
+    t.text "description"
     t.bigint "producing_area_id", null: false
     t.bigint "category_id", null: false
     t.bigint "recipe_id", null: false
