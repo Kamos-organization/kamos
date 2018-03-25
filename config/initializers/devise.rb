@@ -8,13 +8,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = ENV["DEVISE_SECRET_KEY"]
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = ENV['DEVISE_SENDER']
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -169,7 +169,7 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 5.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -185,7 +185,8 @@ Devise.setup do |config|
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
-  # config.unlock_strategy = :both
+  config.unlock_strategy = :email
+  config.maximum_attempts = 3
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
@@ -252,7 +253,13 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  # if Rails.env.production?
+  #   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email', info_fields: 'email,name'
+  #   config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET']
+  # else
+  #   config.omniauth :facebook, ENV['FACEBOOK_DEV_APP_ID'], ENV['FACEBOOK_DEV_APP_SECRET'], scope: 'email', info_fields: 'email,name'
+  #   config.omniauth :twitter, ENV['TWITTER_DEV_API_KEY'], ENV['TWITTER_DEV_API_SECRET']
+  # end
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
