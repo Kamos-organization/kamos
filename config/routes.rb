@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'alcohols/search', to: 'alcohol#search', as: 'alcohol-search'
   end
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

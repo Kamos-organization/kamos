@@ -4,8 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token
@@ -35,12 +35,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :gender
       t.string :graduate
-      t.string :image
       t.boolean :notification_1
       t.boolean :notification_2
       t.boolean :notification_3
-      t.string :twitter_account
-      t.string :facebook_account
+      t.string :provider, null: false
+      t.string :uid, null: false
+      t.string :image_url, null: false
 
 
       t.timestamps null: false
@@ -50,5 +50,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token, unique: true
     add_index :users, :unlock_token, unique: true
+    add_index :users, :uid, unique: true
+    add_index :users, :provider, unique: true
   end
 end

@@ -180,17 +180,19 @@ ActiveRecord::Schema.define(version: 2018_03_14_152250) do
     t.string "name"
     t.integer "gender"
     t.string "graduate"
-    t.string "image"
     t.boolean "notification_1"
     t.boolean "notification_2"
     t.boolean "notification_3"
-    t.string "twitter_account"
-    t.string "facebook_account"
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["provider"], name: "index_users_on_provider", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
