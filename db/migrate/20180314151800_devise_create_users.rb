@@ -38,9 +38,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :notification_1
       t.boolean :notification_2
       t.boolean :notification_3
-      t.string :provider, null: false
-      t.string :uid, null: false
-      t.string :image_url, null: false
+      t.string :provider
+      t.string :uid
+      t.string :image_url
 
 
       t.timestamps null: false

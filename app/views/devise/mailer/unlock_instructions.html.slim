@@ -1,10 +1,10 @@
 p
-  | Hello 
+  | Dear
+  br
   = @resource.email
-  | !
 p
-  | Your account has been locked due to an excessive number of unsuccessful sign in attempts.
-p
-  | Click the link below to unlock your account:
+  = simple_format(t(:unlock_message1))
 p
   = link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token)
+p
+  = simple_format(t(:unlock_message2))

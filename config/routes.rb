@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'users', to: 'users#index'
+
   scope module: :site do
     root 'top#index'
-    get 'mypage/:id', to: 'mypage#show', as: 'mypage', constraints: {id: /\d/}
+    get 'mypage/:id', to: 'mypage#show', as: 'mypage'
     get 'alcohols', to: 'alcohol#index'
     get 'alcohols/:id', to: 'alcohol#show', as: 'alcohol', constraints: {id: /\d/}
     get 'alcohols/:id/review', to: 'alcohol#review', as: 'alcohol-review', constraints: {id: /\d/}

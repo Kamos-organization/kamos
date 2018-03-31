@@ -1,39 +1,110 @@
 ja:
   activerecord:
     models:
-      admin_user: "管理者"
-      comment: "コメント"
-      alcohol: "お酒"
-      category: "カテゴリ"
-      favorite: "お気に入り"
-      history: "閲覧履歴"
-      interest: "気になる"
-      material: "原料"
-      producing_area: "産地"
-      recipe: "製法"
-      recommend: "レコメンド"
-      review: "レビュー"
-      tag: "タグ"
-      user: "ユーザー"
-      alcohols_material: "お酒と原料"
-      alcohols_tag: "お酒とタグ"
+      admin_user: 管理者
+      comment: コメント
+      alcohol: お酒
+      category: カテゴリ
+      favorite: お気に入り
+      history: 閲覧履歴
+      interest: 気になる
+      material: 原料
+      producing_area: 産地
+      recipe: 製法
+      recommend: レコメンド
+      review: レビュー
+      tag: タグ
+      user: ユーザー
+      alcohols_material: お酒と原料
+      alcohols_tag: お酒とタグ
     attributes:
       admin_user:
-        email: "メールアドレス"
-        current_sign_in_at: "最新ログイン日時"
-        sign_in_count: "ログイン回数"
-        created_at: "作成日時"
+        email: メールアドレス
+        current_sign_in_at: 最新ログイン日時
+        sign_in_count: ログイン回数
+        created_at: 作成日時
       name:
-        name: "名前"
-        date: "日付"
-        created_at: "作成日時"
-        updated_at: "更新日時"
+        name: 名前
+        date: 日付
+        created_at: 作成日時
+        updated_at: 更新日時
+      user:
+        user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード確認
+        email: メールアドレス
+        confirmation_token: URLは
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  login: ログイン
+  logout: ログアウト
+  edit_profile: プロフィール編集
+  sign_up: 新規登録
+  forgot_your_password: パスワードをお忘れですか？
+  confirmable: 認証メールが届かない場合
+  lockable: アカウントロック解除
+  characters_minimum: 文字以上
+  remember_me: パスワードを記憶
+  confirm_my_account: 認証する
+  welcome_message1: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    ただいま仮登録を承りましたので、下記のお手続きをお願いします。
+
+    ▼登録はまだ完了していません▼
+    おそれいりますが、以下のURLをクリックしてご登録を完了してください。
+  welcome_message2: |-
+    ※このご案内メールはKamosをご利用のお客様に送信しています。
+    　本メールにお心当たりのない場合は、他のご利用者がメールアドレスを
+    　間違えて指定された可能性がございます。
+    　今後は当社より継続的にメールが送信されることは一切ございません。
+
+    ※このご案内メールは自動で送信されています。
+    　本メールにご返信をいただきましてもご質問等にはお答えできません。
+  forgot_your_password: パスワードをお忘れですか?
+  reset_password: パスワードをリセット
+  resend_confirmation: 認証メール再送信
+  send: 送信
+  change_password: パスワード変更
+  new_password: 新しいパスワード
+  password_message1: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    このメールのURLをクリックして､パスワードの再設定手続きを行なってください｡
+  password_message2: パスワードを変更する
+  password_message3: |-
+    リクエストしていない場合は、このメールを無視してください。
+
+    上記のリンクにアクセスして新しいリンクを作成するまで、パスワードは変更されません。
+
+    本メールはKamosからのパスワード再設定手続き用メールです。
+
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  unlock_message1: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    ログイン失敗回数が上限に達した為、アカウントをロックしました。
+    下のリンクをクリックしてアカウントのロックを解除してください。
+  unlock_message2: |-
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  change_password_message: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+
+    パスワードが変更されました。
+
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  change_email_message: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+
+    Emailアドレスが変更されました。
+
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
   date:
     abbr_day_names:
     - 日
@@ -230,4 +301,5 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
-  admin_users:
+
+
