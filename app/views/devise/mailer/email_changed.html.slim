@@ -1,0 +1,13 @@
+p
+  | Dear
+  = @email
+- if @resource.try(:unconfirmed_email?)
+  p
+    = simple_format(t(:change_email_message))
+    = @resource.unconfirmed_email
+    | .
+- else
+  p
+    = simple_format(t(:change_email_message))
+    = @resource.email
+    | .

@@ -1,0 +1,10 @@
+p
+  | Dear
+  br
+  = @resource.email
+p
+  = simple_format(t(:unlock_message1))
+p
+  = link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token)
+p
+  = simple_format(t(:unlock_message2))

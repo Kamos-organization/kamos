@@ -76,3 +76,6 @@ gem 'font-awesome-rails'
 
 gem 'dotenv-rails'
 gem 'slim-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
