@@ -2,28 +2,34 @@
   h1 酒詳細
 
   label 名称
-  = @alcohol.name
+  - if @alcohol.present?
+    = @alcohol.name
   br
 
   label アルコール度数
-  = @alcohol.degree
-  br
+  - if @alcohol.present?
+    = @alcohol.degree
+    br
 
   label 原産国
-  = @alcohol.producing_area.name
-  br
+  - if @alcohol.present? && @alcohol.producing_area.present?
+    = @alcohol.producing_area.name
+    br
 
   label 原料
-  - @alcohol.materials.each do |material|
-    = material.name
-  br
+  - if @alcohol.present?
+    - @alcohol.materials.each do |material|
+      = material.name
+    br
 
   label テイスト
-  - @alcohol.tags.each do |tag|
+  - if @alcohol.present?
+    - @alcohol.tags.each do |tag|
       = tag.name
-  br
+    br
 
   label 説明
-  = @alcohol.description
-  br
+  - if @alcohol.present?
+    = @alcohol.description
+    br
 
