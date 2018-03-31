@@ -20,9 +20,9 @@ Tag.create!(name: 'ピルスナー') if Rails.env.development?
 Tag.create!(name: 'エール') if Rails.env.development?
 Tag.create!(name: 'スタウト') if Rails.env.development?
 Tag.create!(name: '強炭酸') if Rails.env.development?
-Alcohol.create!(name: 'スーパードライ', degree: 5, description: '開発当時に進行していた日本の食生活の変化に対応したビールとして開発された。同時代の日本で販売されていたビールに比べ、苦味を抑え、甘さも少なくしたビールである。', producing_area_id: 1, category_id: 1, recipe_id: 1) if Rails.env.development?
-Alcohol.create!(name: '一番搾り', degree: 5, description: '渋みが少なく、さっぱりとしたビール', producing_area_id: 1, category_id: 1, recipe_id: 1) if Rails.env.development?
-Alcohol.create!(name: 'バドワイザー', degree: 5, description: '薄味で喉越し抜群、超定番のアメリカビール。', producing_area_id: 2, category_id: 1, recipe_id: 1) if Rails.env.development?
+Alcohol.create!(name: 'スーパードライ', degree: 5, description: '開発当時に進行していた日本の食生活の変化に対応したビールとして開発された。同時代の日本で販売されていたビールに比べ、苦味を抑え、甘さも少なくしたビールである。', producing_area_id: 1, category_id: 1, recipe_id: 1, created_at: '2018-03-31 09:07:46') if Rails.env.development?
+Alcohol.create!(name: '一番搾り', degree: 5, description: '渋みが少なく、さっぱりとしたビール', producing_area_id: 1, category_id: 1, recipe_id: 1, created_at: '2018-03-31 09:08:46') if Rails.env.development?
+Alcohol.create!(name: 'バドワイザー', degree: 5, description: '薄味で喉越し抜群、超定番のアメリカビール。', producing_area_id: 2, category_id: 1, recipe_id: 1, created_at: '2018-03-31 09:09:46') if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 1) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 2) if Rails.env.development?
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 3) if Rails.env.development?
