@@ -23,6 +23,6 @@ class Search::Alcohol < Search::Base
   end
 
   def self.search_by_new_arrivals
-
+    Alcohol.order('created_at DESC')
   end
 end
