@@ -2,5 +2,8 @@
   h1 = t('new_arrival')
   - @alcohols.each do |alcohol|
     = link_to alcohols_top_path(alcohol.id)
-        |
-        = alcohol.name
+      - if alcohol.image.present?
+        = image_tag alcohol.image
+      - else
+        = image_tag '/images/no_image.png'
+      = alcohol.name

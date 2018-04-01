@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_03_14_152250) do
     t.string "name"
     t.string "degree"
     t.text "description"
+    t.text "image"
     t.bigint "producing_area_id", null: false
     t.bigint "category_id", null: false
     t.bigint "recipe_id", null: false

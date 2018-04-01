@@ -4,6 +4,7 @@ class CreateAlcohols < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :degree
       t.text :description
+      t.text :image
       t.belongs_to :producing_area, index: true, null: false
       t.belongs_to :category, index: true, null: false
       t.belongs_to :recipe, index: true, null: false
