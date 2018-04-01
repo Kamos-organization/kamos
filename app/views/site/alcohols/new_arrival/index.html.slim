@@ -1,0 +1,6 @@
+#new-arrivals-index
+  h1 新着
+  - @alcohols.each do |alcohol|
+    = link_to alcohols_top_path(alcohol.id)
+        |
+        = alcohol.name

@@ -28,9 +28,15 @@ AlcoholsMaterial.create!(alcohol_id: 1, material_id: 2) if Rails.env.development
 AlcoholsMaterial.create!(alcohol_id: 1, material_id: 3) if Rails.env.development?
 AlcoholsTag.create!(alcohol_id: 1, tag_id: 1) if Rails.env.development?
 AlcoholsTag.create!(alcohol_id: 1, tag_id: 4) if Rails.env.development?
-User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+User.create!(email: 'user1@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+User.create!(email: 'user2@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 Favorite.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?
 History.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?
 Interest.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?
 Recommend.create!(alcohol_id: 1, user_id: 1) if Rails.env.development?
 Review.create!(alcohol_id: 1, user_id: 1, evaluation: 5, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?
+Review.create!(alcohol_id: 2, user_id: 1, evaluation: 4, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?
+Review.create!(alcohol_id: 3, user_id: 1, evaluation: 3, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?
+Review.create!(alcohol_id: 1, user_id: 2, evaluation: 1, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?
+Review.create!(alcohol_id: 2, user_id: 2, evaluation: 2, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?
+Review.create!(alcohol_id: 3, user_id: 2, evaluation: 5, sweetness: 0, acidity: 2, bitter: 3, richness: 3, kire: 4, fragrance: 4, title: '日本代表', content: '日本でビールといえばまずでてきます。') if Rails.env.development?

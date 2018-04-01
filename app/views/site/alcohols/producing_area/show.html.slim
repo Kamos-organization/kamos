@@ -1,0 +1,9 @@
+#producing-area-show
+  |
+   産地
+
+  - @alcohols.each do |alcohol|
+    = link_to alcohols_top_path(alcohol.id)
+        |
+        = alcohol.name
+
