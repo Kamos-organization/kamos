@@ -1,5 +1,5 @@
 #producing-area-index
-  h1 産地から探す
+  h1 = t('producing_area')
   - @producing_areas.each do |producing_area|
     = link_to alcohols_producing_area_path(producing_area.id)
         |

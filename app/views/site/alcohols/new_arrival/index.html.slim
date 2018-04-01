@@ -1,5 +1,5 @@
 #new-arrivals-index
-  h1 新着
+  h1 = t('new_arrival')
   - @alcohols.each do |alcohol|
     = link_to alcohols_top_path(alcohol.id)
         |

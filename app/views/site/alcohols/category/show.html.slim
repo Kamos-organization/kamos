@@ -1,7 +1,5 @@
 #category-show
-  |
-   カテゴリ
-
+  h1 = t('category')
   - @alcohols.each do |alcohol|
     = link_to alcohols_top_path(alcohol.id)
         |

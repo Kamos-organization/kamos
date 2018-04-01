@@ -1,22 +1,17 @@
 = form_for(@alcohol, url: alcohols_top_search_path, html: { method: :get, role: 'form' }) do |f|
   = f.text_field :name
-  = f.submit :検索
+  = f.submit t('search')
 
 .search-types
-
-.rank
-  = link_to '/alcohols/rankings' do
-    |
-      ランキング
-.category
-  = link_to '/alcohols/categories' do
-    |
-      カテゴリ
-.producing-area
-  = link_to '/alcohols/producing-areas' do
-    |
-      産地
-.new-arrivals
-  = link_to '/alcohols/new-arrivals' do
-    |
-      新着
+  .rank
+    = link_to '/alcohols/rankings' do
+      = t('ranking')
+  .category
+    = link_to '/alcohols/categories' do
+      = t('activerecord.models.category')
+  .producing-area
+    = link_to '/alcohols/producing-areas' do
+      = t('activerecord.models.producing_area')
+  .new-arrivals
+    = link_to '/alcohols/new-arrivals' do
+      = t('new_arrival')

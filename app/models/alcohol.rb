@@ -12,4 +12,6 @@ class Alcohol < ApplicationRecord
   has_many :recommends
   has_many :histories
   has_many :reviews
+
+  validates :name, length: { maximum: 255 }
 end

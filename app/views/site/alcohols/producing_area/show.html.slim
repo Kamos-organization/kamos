@@ -1,7 +1,5 @@
 #producing-area-show
-  |
-   産地
-
+  h2 = t('producing_area')
   - @alcohols.each do |alcohol|
     = link_to alcohols_top_path(alcohol.id)
         |

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'tops', to: 'top#index'
       get 'tops/:id', to: 'top#show', as: 'top', constraints: {id: /\d/}
       get 'tops/:id/review', to: 'top#review', as: 'top-review', constraints: {id: /\d/}
-      get 'tops/search', to: 'alcohol#search', as: 'top-search'
+      get 'tops/search', to: 'top#search', as: 'top-search'
       get 'categories', to: 'category#index'
       get 'categories/:id', to: 'category#show', as: 'category', constraints: {id: /\d/}
       get 'rankings', to: 'ranking#index'
