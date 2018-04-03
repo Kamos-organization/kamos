@@ -1,0 +1,6 @@
+#category-index
+  h1 = t('category')
+  - @categories.each do |category|
+    = link_to alcohols_category_path(category.id)
+        |
+        = category.name

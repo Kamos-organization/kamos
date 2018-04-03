@@ -35,6 +35,16 @@ ja:
         password_confirmation: パスワード確認
         email: メールアドレス
         confirmation_token: URLは
+      alcohol:
+        name: 名称
+        degree: 度数
+        description: 説明
+      producing_area:
+        name: 原産国
+      material:
+        name: 原料
+      tag:
+        name: テイスト
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -105,6 +115,11 @@ ja:
 
     ※このご案内メールは自動で送信されています。
      本メールにご返信をいただきましてもご質問等にはお答えできません。
+  category: カテゴリから探す
+  producing_area: 産地から探す
+  ranking: ランキング
+  new_arrival: 新着
+  search: 検索
   date:
     abbr_day_names:
     - 日

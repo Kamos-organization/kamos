@@ -1,0 +1,39 @@
+#alcohol-show
+
+  - if @alcohol.image.present?
+    = image_tag @alcohol.image
+  - else
+    = image_tag '/images/no_image.png'
+
+  label = t('activerecord.attributes.alcohol.name')
+  - if @alcohol.present?
+    = @alcohol.name
+  br
+
+  label = t('activerecord.attributes.alcohol.degree')
+  - if @alcohol.present?
+    = @alcohol.degree
+    br
+
+  label = t('activerecord.attributes.producing_area.name')
+  - if @alcohol.present? && @alcohol.producing_area.present?
+    = @alcohol.producing_area.name
+    br
+
+  label = t('activerecord.attributes.material.name')
+  - if @alcohol.present?
+    - @alcohol.materials.each do |material|
+      = material.name
+    br
+
+  label = t('activerecord.attributes.tag.name')
+  - if @alcohol.present?
+    - @alcohol.tags.each do |tag|
+      = tag.name
+    br
+
+  label = t('activerecord.attributes.alcohol.description')
+  - if @alcohol.present?
+    = @alcohol.description
+    br
+
