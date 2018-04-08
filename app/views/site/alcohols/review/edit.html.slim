@@ -1,0 +1,21 @@
+#alcohol-review-new
+
+  - if @alcohol.image.present?
+    = image_tag @alcohol.image
+  - else
+    = image_tag '/images/no_image.png'
+
+  label = t('activerecord.attributes.alcohol.name')
+  - if @alcohol.present?
+    = @alcohol.name
+  br
+
+  = form_for(@review, url: alcohols_review_create_path, html: {method: :post, role: 'form'}) do |f|
+
+    label = t('activerecord.attributes.review.title')
+    = f.text_field :title
+    br
+    label = t('activerecord.attributes.review.content')
+    = f.text_area :content
+    br
+    = f.submit t('regist')

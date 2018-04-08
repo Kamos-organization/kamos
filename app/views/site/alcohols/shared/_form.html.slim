@@ -1,4 +1,4 @@
-= form_for(@alcohol, url: alcohols_top_search_path, html: { method: :get, role: 'form' }) do |f|
+= form_for(@alcohol, url: alcohols_search_path, html: { method: :get, role: 'form' }) do |f|
   = f.text_field :name
   = f.submit t('search')
 

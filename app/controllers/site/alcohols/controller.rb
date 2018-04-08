@@ -1,10 +1,10 @@
-class Site::Alcohols::TopController < Site::ApplicationController
+class Site::Alcohols::Controller < ApplicationController
   def index
     @alcohol = Search::Alcohol.new
   end
 
   def show
-    @alcohol = Alcohol.find(params[:id])
+    @alcohol = Alcohol.find(params[:alcohol_id])
   end
 
   def review

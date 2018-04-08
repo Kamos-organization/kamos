@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'users', to: 'users#index'
 
   scope module: :site do
@@ -8,10 +9,11 @@ Rails.application.routes.draw do
     get 'mypage/:id/recommends', to: 'mypage#recommends', as: 'mypage_recommends'
     get 'mypage/:id/histories', to: 'mypage#histories', as: 'mypage_histories'
     namespace :alcohols do
-      get 'tops', to: 'top#index'
-      get 'tops/:id', to: 'top#show', as: 'top', constraints: {id: /\d/}
-      get 'tops/:id/review', to: 'top#review', as: 'top-review', constraints: {id: /\d/}
-      get 'tops/search', to: 'top#search', as: 'top-search'
+      get '', to: '#index'
+      get ':alcohol_id', to: '#show', as: 'show', constraints: {id: /\d/}
+      get ':alcohol_id/reviews/new', to: 'review#new', as: 'review-new', constraints: {alcohol_id: /\d/}
+      post ':alcohol_id/reviews/create', to: 'review#create', as: 'review-create', constraints: {alcohol_id: /\d/}
+      get 'search', to: '#search', as: 'search'
       get 'categories', to: 'category#index'
       get 'categories/:id', to: 'category#show', as: 'category', constraints: {id: /\d/}
       get 'rankings', to: 'ranking#index'
