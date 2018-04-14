@@ -23,6 +23,15 @@ Rails.application.routes.draw do
       get 'new-arrivals', to: 'new_arrival#index'
       get 'new-arrivals/:id', to: 'new_arrival#show', as: 'new_arrival', constraints: {id: /\d/}
     end
+    namespace :settings do
+      get 'profile/show'
+      get 'profile/edit'
+      patch 'profile/update'
+      get 'password/edit'
+      patch 'password/update'
+      get 'notification/show'
+      patch 'notification/update'
+    end
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
