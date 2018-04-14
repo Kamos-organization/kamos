@@ -1,0 +1,10 @@
+ul
+  li
+    = link_to t(:profile), settings_profile_show_path
+  -if current_user.provider.blank?
+    li
+      = link_to t(:password), settings_password_edit_path
+  li
+    = link_to t(:notification), settings_notification_show_path
+  / li
+  /   = link_to t(:sns), settings_sns_show_path

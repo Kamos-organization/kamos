@@ -31,3 +31,4 @@ kamos.iml
 vendor/bundle/
 .env
 railways.cache
+.DS_Store

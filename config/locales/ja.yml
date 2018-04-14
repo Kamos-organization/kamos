@@ -30,11 +30,13 @@ ja:
         updated_at: 更新日時
       user:
         user:
-        name: 名前
+        name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
         email: メールアドレス
         confirmation_token: URLは
+        gender: 性別
+        graduate: 出身
       alcohol:
         name: 名称
         degree: 度数
@@ -115,6 +117,63 @@ ja:
 
     ※このご案内メールは自動で送信されています。
      本メールにご返信をいただきましてもご質問等にはお答えできません。
+  forgot_your_password: パスワードをお忘れですか?
+  reset_password: パスワードをリセット
+  resend_confirmation: 認証メール再送信
+  send: 送信
+  change_password: パスワード変更
+  new_password: 新しいパスワード
+  password_message1: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    このメールのURLをクリックして､パスワードの再設定手続きを行なってください｡
+  password_message2: パスワードを変更する
+  password_message3: |-
+    リクエストしていない場合は、このメールを無視してください。
+    上記のリンクにアクセスして新しいリンクを作成するまで、パスワードは変更されません。
+    本メールはKamosからのパスワード再設定手続き用メールです。
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  unlock_message1: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    ログイン失敗回数が上限に達した為、アカウントをロックしました。
+    下のリンクをクリックしてアカウントのロックを解除してください。
+  unlock_message2: |-
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  change_password_message: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    パスワードが変更されました。
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  change_email_message: |-
+    このたびはKamosをご利用いただき、誠にありがとうございます。
+    Emailアドレスが変更されました。
+    ※このご案内メールは自動で送信されています。
+     本メールにご返信をいただきましてもご質問等にはお答えできません。
+  user_settings: ユーザー設定
+  profile: プロフィール
+  password: パスワード
+  notification: 通知設定
+  sns: 外部サービス
+  user_name: ユーザー名
+  gender: 性別
+  graduate: 出身
+  email: Eメールアドレス
+  updated_profile: プロフィールを更新しました。
+  unupdated_profile: プロフィールの更新に失敗しました。
+  updated_password: パスワードを更新しました。
+  unupdated_password: パスワードの更新に失敗しました。
+  gender_no_selected: 未選択
+  men: 男性
+  women: 女性
+  current_password: 現在のパスワード
+  new_password: 新しいパスワード
+  confirm_password: パスワード確認
+  notification1: 新着情報を受け取る
+  notification2: オススメ情報を受け取る
+  notification3: ニュースを受け取る
+  updated_notification: 通知設定を更新しました。
+  unupdated_notification: 通知設定の更新に失敗しました。
   category: カテゴリから探す
   producing_area: 産地から探す
   ranking: ランキング

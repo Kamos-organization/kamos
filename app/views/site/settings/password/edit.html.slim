@@ -1,0 +1,21 @@
+= render 'site/settings/shared/menu'
+h1
+  = t(:password)
+= form_for current_user, url: settings_password_update_path do |f|
+  p
+    = f.label t(:current_password)
+    = f.password_field :current_password
+  p
+    = f.label t(:new_password)
+    - if @minimum_password_length
+      em
+        | (
+        = @minimum_password_length
+        = t(:characters_minimum)
+        | )
+    = f.password_field :password, autocomplete: 'off'
+  p
+    = f.label t(:confirm_password)
+    = f.password_field :password_confirmation, autocomplete: 'off'
+  p
+    = f.submit
