@@ -57,7 +57,7 @@ ja:
   logout: ログアウト
   edit_profile: プロフィール編集
   sign_up: 新規登録
-  forgot_your_password: パスワードをお忘れですか？
+  forgot_your_password: パスワードのリセット
   confirmable: 認証メールが届かない場合
   lockable: アカウントロック解除
   characters_minimum: 文字以上
@@ -77,7 +77,6 @@ ja:
 
     ※このご案内メールは自動で送信されています。
     　本メールにご返信をいただきましてもご質問等にはお答えできません。
-  forgot_your_password: パスワードをお忘れですか?
   reset_password: パスワードをリセット
   resend_confirmation: 認証メール再送信
   send: 送信
