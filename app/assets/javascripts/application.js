@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/highstock

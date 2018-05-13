@@ -1,0 +1,11 @@
+#alcohol-review-index
+
+  - if @alcohols.present?
+    - @alcohols.each do |alcohol|
+      = t('review_product', {product: alcohol.name})
+      br
+      - alcohol.reviews.each do |review|
+        = review.title
+        = link_to alcohols_review_edit_path(alcohol_id: alcohol.id, id: review.id) do
+          = t('edit')
+        br

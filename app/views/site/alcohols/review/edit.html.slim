@@ -1,21 +1,82 @@
-#alcohol-review-new
+#alcohol-review-edit
 
-  - if @alcohol.image.present?
-    = image_tag @alcohol.image
-  - else
-    = image_tag '/images/no_image.png'
-
-  label = t('activerecord.attributes.alcohol.name')
-  - if @alcohol.present?
-    = @alcohol.name
+  = render 'alcohol', alcohol: @alcohol
   br
 
-  = form_for(@review, url: alcohols_review_create_path, html: {method: :post, role: 'form'}) do |f|
-
+  = form_for(@review, url: alcohols_review_update_path(@review), html: {method: :patch, role: 'form'}) do |f|
     label = t('activerecord.attributes.review.title')
     = f.text_field :title
     br
     label = t('activerecord.attributes.review.content')
     = f.text_area :content
     br
-    = f.submit t('regist')
+    label = t('activerecord.attributes.review.evaluation')
+    p.range-field
+      input id="evaluation-range" max="5" min="0" type="range"
+      = f.hidden_field :evaluation, id: 'evaluation'
+    label = t('activerecord.attributes.review.kire')
+    p.range-field
+      input id="kire-range" max="5" min="0" type="range"
+      = f.hidden_field :kire, id: 'kire'
+    label = t('activerecord.attributes.review.sweetness')
+    p.range-field
+      input id="sweetness-range" max="5" min="1" type="range"
+      = f.hidden_field :sweetness, id: 'sweetness'
+    label = t('activerecord.attributes.review.acidity')
+    p.range-field
+      input id="acidity-range" max="5" min="1" type="range"
+      = f.hidden_field :acidity, id: 'acidity'
+    label = t('activerecord.attributes.review.bitter')
+    p.range-field
+      input id="bitter-range" max="5" min="1" type="range"
+      = f.hidden_field :bitter, id: 'bitter'
+    label = t('activerecord.attributes.review.richness')
+    p.range-field
+      input id="richness-range" max="5" min="1" type="range"
+      = f.hidden_field :richness, id: 'richness'
+    label = t('activerecord.attributes.review.fragrance')
+    p.range-field
+      input id="fragrance-range" max="5" min="1" type="range"
+      = f.hidden_field :fragrance, id: 'fragrance'
+    = f.submit t('update')
+
+javascript:
+  $(function () {
+    setRange()
+    setHidden()
+
+    // hiddenからrangeへ値を渡す
+    function setRange(){
+      $('#evaluation-range').val($('#evaluation').val())
+      $('#kire-range').val($('#kire').val())
+      $('#sweetness-range').val($('#sweetness').val())
+      $('#acidity-range').val($('#acidity').val())
+      $('#bitter-range').val($('#bitter').val())
+      $('#richness-range').val($('#richness').val())
+      $('#fragrance-range').val($('#fragrance').val())
+    }
+    // rangeからhiddenへ値を渡す
+    function setHidden(){
+      $('#evaluation-range').on('change', function(){
+        $('#evaluation').val($(this).val())
+      })
+      $('#kire-range').on('change', function(){
+        $('#kire').val($(this).val())
+      })
+      $('#sweetness-range').on('change', function(){
+        $('#sweetness').val($(this).val())
+      })
+      $('#acidity-range').on('change', function(){
+        $('#acidity').val($(this).val())
+      })
+      $('#bitter-range').on('change', function(){
+        $('#bitter').val($(this).val())
+      })
+      $('#richness-range').on('change', function(){
+        $('#richness').val($(this).val())
+      })
+      $('#fragrance-range').on('change', function(){
+        $('#fragrance').val($(this).val())
+      })
+    }
+  })

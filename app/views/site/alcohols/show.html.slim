@@ -6,36 +6,48 @@
     = image_tag 'no_image.png'
 
   label = t('activerecord.attributes.alcohol.name')
-  - if @alcohol.present?
-    = @alcohol.name
+  = @alcohol&.name
   br
 
   label = t('activerecord.attributes.alcohol.degree')
-  - if @alcohol.present?
-    = @alcohol.degree
+  = @alcohol&.degree
     br
 
   label = t('activerecord.attributes.producing_area.name')
-  - if @alcohol.present? && @alcohol.producing_area.present?
-    = @alcohol.producing_area.name
+  = @alcohol&.producing_area.name
     br
 
   label = t('activerecord.attributes.material.name')
-  - if @alcohol.present?
-    - @alcohol.materials.each do |material|
-      = material.name
-    br
+  - @alcohol&.materials.each do |material|
+    = material&.name
+  br
 
   label = t('activerecord.attributes.tag.name')
-  - if @alcohol.present?
-    - @alcohol.tags.each do |tag|
-      = tag.name
-    br
+  - @alcohol&.tags.each do |tag|
+    = tag&.name
+  br
+
+  = high_chart('evaluation', @graph)
+
+  label = t('activerecord.attributes.alcohol.evaluation')
+  = @evaluation&.round
+  br
 
   label = t('activerecord.attributes.alcohol.description')
-  - if @alcohol.present?
-    = @alcohol.description
-    br
+  = @alcohol&.description
+  br
+
 
   = link_to alcohols_review_new_path(@alcohol) do
     = t('review')
+  br
+
+  - @reviews.each do |review|
+    = review&.user&.name
+    br
+    = review&.evaluation
+    br
+    = review&.title
+    br
+    = review&.content
+    br

@@ -10,18 +10,21 @@ Rails.application.routes.draw do
     get 'mypage/:id/histories', to: 'mypage#histories', as: 'mypage_histories'
     namespace :alcohols do
       get '', to: '#index'
-      get ':alcohol_id', to: '#show', as: 'show', constraints: {id: /\d/}
-      get ':alcohol_id/reviews/new', to: 'review#new', as: 'review-new', constraints: {alcohol_id: /\d/}
-      post ':alcohol_id/reviews/create', to: 'review#create', as: 'review-create', constraints: {alcohol_id: /\d/}
+      get ':alcohol_id', to: '#show', as: 'show', alcohol_id: /\d+/
+      get 'reviews', to: 'review#index', as: 'review-index'
+      get ':alcohol_id/reviews/new', to: 'review#new', as: 'review-new', alcohol_id: /\d+/
+      get ':alcohol_id/reviews/:id/edit', to: 'review#edit', as: 'review-edit', alcohol_id: /\d+/, id: /\d+/
+      post 'reviews/create/:alcohol_id', to: 'review#create', as: 'review-create', alcohol_id: /\d+/
+      patch 'reviews/update/:id', to: 'review#update', as: 'review-update', id: /\d+/
       get 'search', to: '#search', as: 'search'
       get 'categories', to: 'category#index'
-      get 'categories/:id', to: 'category#show', as: 'category', constraints: {id: /\d/}
+      get 'categories/:id', to: 'category#show', as: 'category', id: /\d+/
       get 'rankings', to: 'ranking#index'
-      get 'rankings/:id', to: 'ranking#show', as: 'ranking', constraints: {id: /\d/}
+      get 'rankings/:id', to: 'ranking#show', as: 'ranking', id: /\d+/
       get 'producing-areas', to: 'producing_area#index'
-      get 'producing-areas/:id', to: 'producing_area#show',  as: 'producing_area', constraints: {id: /\d/}
+      get 'producing-areas/:id', to: 'producing_area#show',  as: 'producing_area', id: /\d+/
       get 'new-arrivals', to: 'new_arrival#index'
-      get 'new-arrivals/:id', to: 'new_arrival#show', as: 'new_arrival', constraints: {id: /\d/}
+      get 'new-arrivals/:id', to: 'new_arrival#show', as: 'new_arrival', id: /\d+/
     end
     namespace :settings do
       get 'profile/show'
