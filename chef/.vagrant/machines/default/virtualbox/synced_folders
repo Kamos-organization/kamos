@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/endo-yuta/Documents/private-work-space/kamos/chef","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
