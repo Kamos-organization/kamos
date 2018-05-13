@@ -10,13 +10,15 @@ html
       nav
         div.nav-wrapper
           - if current_user
-            a.brand-logo href="/mypage/#{current_user.id}"  KAMOS
+            a.brand-logo href="/mypage/#{current_user.id}/interests"  KAMOS
           - else
             a.brand-logo href="/"  KAMOS
           ul.right
             - if user_signed_in?
               li
                 = link_to t(:logout), destroy_user_session_path, method: :delete
+              li
+                = link_to t(:search_alchol), alcohols_tops_path
               li
                 = link_to t(:user_settings), settings_profile_show_path
             - else

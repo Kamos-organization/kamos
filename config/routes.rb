@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   scope module: :site do
     root 'top#index'
-    get 'mypage/:id', to: 'mypage#show', as: 'mypage'
+    get 'mypage/:id/interests', to: 'mypage#interests', as: 'mypage_interests'
+    get 'mypage/:id/favorites', to: 'mypage#favorites', as: 'mypage_favorites'
+    get 'mypage/:id/recommends', to: 'mypage#recommends', as: 'mypage_recommends'
+    get 'mypage/:id/histories', to: 'mypage#histories', as: 'mypage_histories'
     namespace :alcohols do
       get 'tops', to: 'top#index'
       get 'tops/:id', to: 'top#show', as: 'top', constraints: {id: /\d/}
