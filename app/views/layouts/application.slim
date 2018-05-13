@@ -8,15 +8,69 @@ html
   body
     header
       nav
-        - if user_signed_in?
-          = link_to t(:logout), destroy_user_session_path, method: :delete
-          = link_to t(:user_settings), settings_profile_show_path
-        - else
-          = link_to t(:sign_up), new_user_registration_path
-          = link_to t(:login), new_user_session_path
+        div.nav-wrapper
+          - if current_user
+            a.brand-logo href="/mypage/#{current_user.id}"  KAMOS
+          - else
+            a.brand-logo href="/"  KAMOS
+          ul.right
+            - if user_signed_in?
+              li
+                = link_to t(:logout), destroy_user_session_path, method: :delete
+              li
+                = link_to t(:user_settings), settings_profile_show_path
+            - else
+              li
+                = link_to t(:sign_up), new_user_registration_path
+              li
+                = link_to t(:login), new_user_session_path
 
-    p.notice
-      = notice
-    p.alert
-      = alert
-    == yield
+    main
+      div.container
+        p.notice
+          = notice
+        p.alert
+          = alert
+        == yield
+
+    footer.page-footer
+      .container
+        .row
+          .col.l3.s6
+            h5.white-text Logo
+          .col.l3.s12
+            h5.white-text 企業情報
+            ul
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 1
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 2
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 3
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 4
+          .col.l3.s12
+            h5.white-text コミュニティ
+            ul
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 1
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 2
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 3
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 4
+          .col.l3.s12
+            h5.white-text お問い合わせ
+            ul
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 1
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 2
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 3
+              li
+                a.grey-text.text-lighten-3 href="#!"  Link 4
+      .footer-copyright
+        .container
+          | © 2018 KAMOS inc.

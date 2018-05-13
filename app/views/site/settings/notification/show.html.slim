@@ -1,15 +1,21 @@
-= render 'site/settings/shared/menu'
-h1
-  = t(:notification)
-= form_for current_user, url: settings_notification_update_path do |f|
-  p
-    = f.label t(:notification1)
-    = f.check_box :notification_1
-  p
-    = f.label t(:notification2)
-    = f.check_box :notification_2
-  p
-    = f.label t(:notification3)
-    = f.check_box :notification_3
-  p
-    = f.submit
+div.row
+  div.col.s12.m4.l4
+    = render 'site/settings/shared/menu'
+
+  div.col.s12.m8.l8
+    h3 = t(:notification)
+    = form_for current_user, url: settings_notification_update_path do |f|
+      p
+        label
+          = f.check_box :notification_1, id: 'notification_1', class: 'filled-in'
+          = f.label t(:notification1), for: 'notification_1', id: 'notification_1'
+      p
+        label
+          = f.check_box :notification_2, id: 'notification_2', class: 'filled-in'
+          = f.label t(:notification2), for: 'notification_2', id: 'notification_2'
+      p
+        label
+          = f.check_box :notification_3, id: 'notification_3', class: 'filled-in'
+          = f.label t(:notification3), for: 'notification_3', id: 'notification_3'
+      p
+        = f.submit t(:update), class: 'waves-effect waves-light btn'

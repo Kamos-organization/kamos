@@ -1,4 +1,4 @@
-class Site::Settings::ProfileController < ApplicationController
+class Site::Settings::ProfileController < Site::ApplicationController
   def show
   end
 

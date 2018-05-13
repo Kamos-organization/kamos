@@ -1,4 +1,4 @@
-class Site::Alcohols::CategoryController < ApplicationController
+class Site::Alcohols::CategoryController < Site::ApplicationController
   def index
     @categories = Category.all
   end

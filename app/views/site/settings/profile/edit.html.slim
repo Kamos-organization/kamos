@@ -1,20 +1,26 @@
-= render 'site/settings/shared/menu'
+div.row
+  div.col.s12.m4.l4
+    = render 'site/settings/shared/menu'
 
-h1
-  = t(:profile)
+  div.col.s12.m8.l8
+    h3 = t(:profile)
+    = form_with model: current_user, url: settings_profile_update_path, local: true do |f|
+      p
+        = f.label :name
+        = f.text_field :name
+      p
+        = f.label :email
+        = f.text_field :email, autocomplete: 'email'
+      p
+        = f.select :gender, [['未選択', 0], ['男性', 1], ['女性', 2]]
+        = f.label :gender
+      p
+        = f.label :graduate
+        = f.text_field :graduate
+      p
+        = f.submit t(:update), class: 'waves-effect waves-light btn'
 
-= form_with model: current_user, url: settings_profile_update_path, local: true do |f|
-  p
-    = f.label :name
-    = f.text_field :name
-  p
-    = f.label :email
-    = f.text_field :email, autocomplete: 'email'
-  p
-    = f.label :gender
-    = f.select :gender, [['未選択', 0], ['男性', 1], ['女性', 2]]
-  p
-    = f.label :graduate
-    = f.text_field :graduate
-  p
-    = f.submit
+javascript:
+  $(document).ready(function () {
+      $('select').material_select();
+  });

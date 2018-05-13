@@ -1,4 +1,4 @@
-class Site::Alcohols::TopController < ApplicationController
+class Site::Alcohols::TopController < Site::ApplicationController
   def index
     @alcohol = Search::Alcohol.new
   end

@@ -1,4 +1,4 @@
-class Site::Settings::SnsController < ApplicationController
+class Site::Settings::SnsController < Site::ApplicationController
   def show
   end
 end

@@ -1,4 +1,4 @@
-class Site::Settings::PasswordController < ApplicationController
+class Site::Settings::PasswordController < Site::ApplicationController
   def edit
     @minimum_password_length = 6
   end

@@ -1,21 +1,23 @@
-= render 'site/settings/shared/menu'
-h1
-  = t(:password)
-= form_for current_user, url: settings_password_update_path do |f|
-  p
-    = f.label t(:current_password)
-    = f.password_field :current_password
-  p
-    = f.label t(:new_password)
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        = t(:characters_minimum)
-        | )
-    = f.password_field :password, autocomplete: 'off'
-  p
-    = f.label t(:confirm_password)
-    = f.password_field :password_confirmation, autocomplete: 'off'
-  p
-    = f.submit
+div.row
+  div.col.s12.m4.l4
+    = render 'site/settings/shared/menu'
+  div.col.s12.m8.l8
+    h3 = t(:password)
+    = form_for current_user, url: settings_password_update_path do |f|
+      p
+        = f.label t(:current_password)
+        = f.password_field :current_password
+      p
+        = f.label t(:new_password)
+        - if @minimum_password_length
+          em
+            | (
+            = @minimum_password_length
+            = t(:characters_minimum)
+            | )
+        = f.password_field :password, autocomplete: 'off'
+      p
+        = f.label t(:confirm_password)
+        = f.password_field :password_confirmation, autocomplete: 'off'
+      p
+        = f.submit t(:update), class: 'waves-effect waves-light btn'
