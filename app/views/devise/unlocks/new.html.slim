@@ -1,9 +1,9 @@
-h2 = t(:lockable)
+h3 = t(:lockable)
 = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
   = devise_error_messages!
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: 'email'
-  .actions
-    = f.submit t(:send)
+  div.row
+    div.input-field.col.s12
+      = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: 'email'
+  div
+    = f.submit t(:send), class: 'waves-effect waves-light btn'

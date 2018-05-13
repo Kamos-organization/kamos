@@ -1,4 +1,4 @@
-class Site::Settings::NotificationController < ApplicationController
+class Site::Settings::NotificationController < Site::ApplicationController
   def show
   end
 

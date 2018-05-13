@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  namespace :site do
-    namespace :alcohols do
-    end
-  end
   get 'users', to: 'users#index'
 
   scope module: :site do

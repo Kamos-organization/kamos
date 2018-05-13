@@ -1,4 +1,4 @@
-class Site::Alcohols::ProducingAreaController < ApplicationController
+class Site::Alcohols::ProducingAreaController < Site::ApplicationController
   def index
     @producing_areas = ProducingArea.all
   end
