@@ -1,11 +1,9 @@
 #alcohol-search
   = render 'site/alcohols/shared/form'
   .search-result
-    - @alcohols.present?
-      - @alcohols.each do |alcohol|
-        - if alcohol.image.present?
-          = image_tag alcohol.image
-        - else
-          = image_tag 'no_image.png'
-        = alcohol.name
-
+    - @alcohols&.each do |alcohol|
+      - if alcohol&.image.present?
+        = image_tag alcohol.image
+      - else
+        = image_tag 'no_image.png'
+      = alcohol&.name
