@@ -14,4 +14,8 @@ class Alcohol < ApplicationRecord
   has_many :reviews
 
   validates :name, length: { maximum: 255 }
+
+  def self.reviews user_id
+    Alcohol.includes(:reviews).where('reviews.user_id = ?', user_id).references(:reviews)
+  end
 end

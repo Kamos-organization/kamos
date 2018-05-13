@@ -47,6 +47,16 @@ ja:
         name: 原料
       tag:
         name: テイスト
+      review:
+        title: 見出し
+        content: レビュー内容
+        evaluation: 評価
+        sweetness: 甘さ
+        acidity: 酸味
+        bitter: 苦味
+        richness: コク
+        kire: キレ
+        fragrance: 香り
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -180,6 +190,13 @@ ja:
   search: 検索
   history: 最近探したお酒
   search_alchol: お酒を探す
+  regist: 登録
+  edit: 編集
+  update: 更新
+  review: レビュー
+  review_product: "%{product}についてのレビュー"
+  created_review: レビューを投稿しました
+  updated_review: レビューを更新しました
   date:
     abbr_day_names:
     - 日

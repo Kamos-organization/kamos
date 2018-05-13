@@ -1,7 +1,7 @@
 #producing-area-show
   h2 = t('producing_area')
   - @alcohols.each do |alcohol|
-    = link_to alcohols_top_path(alcohol.id)
+    = link_to alcohols_show_path(alcohol.id)
       - if alcohol.image.present?
         = image_tag alcohol.image
       - else

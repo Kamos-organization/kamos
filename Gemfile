@@ -74,6 +74,9 @@ gem 'jquery-ui-rails'
 # Use FontAwesome
 gem 'font-awesome-rails'
 
+# Use LazyHighCharts
+gem 'lazy_high_charts'
+
 gem 'dotenv-rails'
 gem 'slim-rails'
 gem 'omniauth'

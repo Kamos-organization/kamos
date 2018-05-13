@@ -1,0 +1,53 @@
+#alcohol-show
+
+  - if @alcohol.image.present?
+    = image_tag @alcohol.image
+  - else
+    = image_tag 'no_image.png'
+
+  label = t('activerecord.attributes.alcohol.name')
+  = @alcohol&.name
+  br
+
+  label = t('activerecord.attributes.alcohol.degree')
+  = @alcohol&.degree
+    br
+
+  label = t('activerecord.attributes.producing_area.name')
+  = @alcohol&.producing_area.name
+    br
+
+  label = t('activerecord.attributes.material.name')
+  - @alcohol&.materials.each do |material|
+    = material&.name
+  br
+
+  label = t('activerecord.attributes.tag.name')
+  - @alcohol&.tags.each do |tag|
+    = tag&.name
+  br
+
+  = high_chart('evaluation', @graph)
+
+  label = t('activerecord.attributes.alcohol.evaluation')
+  = @evaluation&.round
+  br
+
+  label = t('activerecord.attributes.alcohol.description')
+  = @alcohol&.description
+  br
+
+
+  = link_to alcohols_review_new_path(@alcohol) do
+    = t('review')
+  br
+
+  - @reviews.each do |review|
+    = review&.user&.name
+    br
+    = review&.evaluation
+    br
+    = review&.title
+    br
+    = review&.content
+    br
