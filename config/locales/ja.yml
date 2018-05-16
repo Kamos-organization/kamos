@@ -197,6 +197,8 @@ ja:
   review_product: "%{product}についてのレビュー"
   created_review: レビューを投稿しました
   updated_review: レビューを更新しました
+  add_interest: 気になるに追加しました
+  add_favorite: お気に入りに追加しました
   date:
     abbr_day_names:
     - 日
