@@ -7,4 +7,6 @@
       - else
         = image_tag 'no_image.png'
     = alcohol.name
+    = button_to '気になる', my_interest_path(alcohol.id)
+    = button_to 'お気に入り', my_favorite_path(alcohol.id)
 
