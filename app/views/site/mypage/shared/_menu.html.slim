@@ -1,0 +1,12 @@
+.rank.col.s3.m3.l3
+  = link_to "/mypage/#{current_user.id}/interests" do
+    = t('activerecord.models.interest')
+.category.col.s3.m3.l3
+  = link_to "/mypage/#{current_user.id}/favorites" do
+    = t('activerecord.models.favorite')
+.producing-area.col.s3.m3.l3
+  = link_to "/mypage/#{current_user.id}/recommends" do
+    = t('activerecord.models.recommend')
+.new-arrivals.col.s3.m3.l3
+  = link_to "/mypage/#{current_user.id}/histories" do
+    = t('history')

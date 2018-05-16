@@ -2,18 +2,32 @@ class Site::MypageController < ApplicationController
   before_action :sign_in_required
 
   def interests
-    @alcohols = Interest.search_by_interest(params[:id])
+    @interests = Interest.search_by_interest(params[:id])
   end
 
   def favorites
-    @alcohols = Favorite.search_by_favorite(params[:id])
+    @favorites = Favorite.search_by_favorite(params[:id])
   end
 
   def recommends
-    @alcohols = Recommend.search_by_recommend(params[:id])
+    @recommends = Recommend.search_by_recommend(params[:id])
   end
 
   def histories
-    @alcohols = History.search_by_history(params[:id])
+    @histories = History.search_by_history(params[:id])
+  end
+
+  def add_interest
+    unless Interest.is_exist?(params[:format], current_user.id)
+      interest = Interest.new(alcohol_id: params[:format], user_id: current_user.id)
+      interest.save
+    end
+  end
+
+  def add_favorite
+    unless Favorite.is_exist?(params[:format], current_user.id)
+      favorite = Favorite.new(alcohol_id: params[:format], user_id: current_user.id)
+      favorite.save
+    end
   end
 end

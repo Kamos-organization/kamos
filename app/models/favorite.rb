@@ -5,4 +5,8 @@ class Favorite < ApplicationRecord
   def self.search_by_favorite(user_id)
     Favorite.where(user_id: user_id)
   end
+
+  def self.is_exist?(alchol_id, user_id)
+    Favorite.where(alchol_id, user_id)
+  end
 end

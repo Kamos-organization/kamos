@@ -1,13 +1,14 @@
 .search-types
-  .rank
-    = link_to "/mypage/#{current_user.id}/interests" do
-      = t('activerecord.models.interest')
-  .category
-    = link_to "/mypage/#{current_user.id}/favorites" do
-      = t('activerecord.models.favorite')
-  .producing-area
-    = link_to "/mypage/#{current_user.id}/recommends" do
-      = t('activerecord.models.recommend')
-  .new-arrivals
-    = link_to "/mypage/#{current_user.id}/histories" do
-      = t('history')
+  div.row
+    div.col.s6.m12.l12
+      = render 'site/mypage/shared/menu'
+
+    div.col.s6.m12.l12
+      h2 = t('activerecord.models.favorite')
+      - @favorites.each do |favorite|
+        = link_to alcohols_show_path(favorite.alcohol.id)
+          - if favorite.alcohol.image.present?
+            = image_tag favorite.alcohol.image
+          - else
+            = image_tag 'no_image.png'
+        = favorite.alcohol.name

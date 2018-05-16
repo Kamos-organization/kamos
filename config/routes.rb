@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'mypage/:id/favorites', to: 'mypage#favorites', as: 'mypage_favorites'
     get 'mypage/:id/recommends', to: 'mypage#recommends', as: 'mypage_recommends'
     get 'mypage/:id/histories', to: 'mypage#histories', as: 'mypage_histories'
+    post 'my_interest', to: 'mypage#add_interest'
+    post 'my_favorite', to: 'mypage#add_favorite'
     namespace :alcohols do
       get '', to: '#index'
       get ':alcohol_id', to: '#show', as: 'show', alcohol_id: /\d+/
